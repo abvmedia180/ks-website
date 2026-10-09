@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kind Steward</title>
+    <title>Kind Steward | Every dollar, measured in people helped</title>
     <meta name="description" content="Kind Steward is a 501(c)(3) public charity providing direct humanitarian assistance in Ethiopia, Kenya, and the United States. Every dollar, measured in people helped.">
     <link rel="canonical" href="https://kindsteward.org/">
 
     <!-- Social sharing -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Kind Steward">
-    <meta property="og:title" content="Kind Steward — Every dollar, measured in people helped.">
+    <meta property="og:title" content="Kind Steward | Every dollar, measured in people helped.">
     <meta property="og:description" content="A 501(c)(3) public charity providing direct humanitarian assistance in Ethiopia, Kenya, and the United States. Every dollar, measured in people helped.">
     <meta property="og:url" content="https://kindsteward.org/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Kind Steward — Every dollar, measured in people helped.">
+    <meta property="og:image" content="https://kindsteward.org/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kind Steward. Every dollar, measured in people helped.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://kindsteward.org/og.png">
+    <meta name="twitter:title" content="Kind Steward | Every dollar, measured in people helped.">
     <meta name="twitter:description" content="A 501(c)(3) public charity providing direct humanitarian assistance in Ethiopia, Kenya, and the United States.">
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 68 68'%3E%3Ccircle cx='34' cy='34' r='32' fill='%232D5A3D'/%3E%3Cpath d='M34 17 C34 17, 23 23, 23 31 C23 38, 28 42, 34 47 C40 42, 45 38, 45 31 C45 23, 34 17, 34 17Z' stroke='%23FFFFFF' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
@@ -76,9 +81,12 @@
             border-radius: 4px;
         }
 
-        .hero-title, .why-question, .model-lead, .focus-lead, .close-lead {
+        .hero-title, .why-question, .model-lead, .focus-lead, .focus-sub, .close-lead {
             text-wrap: balance;
         }
+
+        p, h3 { text-wrap: pretty; }
+        .nowrap { white-space: nowrap; }
 
         /* ===== TOP BAR (over hero) ===== */
         .top {
@@ -221,7 +229,7 @@
             font-family: var(--font-body);
             font-size: clamp(1rem, 2vw, 1.15rem);
             font-weight: 300;
-            color: rgba(255,255,255,0.55);
+            color: rgba(255,255,255,0.78);
             max-width: 460px;
             line-height: 1.7;
             opacity: 0;
@@ -341,7 +349,7 @@
             font-size: 1rem;
             font-weight: 400;
             line-height: 1.85;
-            color: var(--text-soft);
+            color: #555;
         }
 
         .why-body p + p { margin-top: 1.25rem; }
@@ -398,16 +406,10 @@
             border-radius: 12px;
             padding: 2.25rem 1.75rem 2rem;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .js .focus-card.reveal.visible:nth-child(2) { animation-delay: 0.08s; }
         .js .focus-card.reveal.visible:nth-child(3) { animation-delay: 0.16s; }
-
-        .focus-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
 
         .focus-badge {
             font-family: var(--font-body);
@@ -423,7 +425,8 @@
             margin-bottom: 1.25rem;
         }
 
-        .focus-spacer { height: calc(0.58rem + 0.5rem + 1.25rem); }
+        .focus-badge { line-height: 1.2; }
+        .focus-spacer { height: calc(0.58rem * 1.2 + 0.5rem + 1.25rem); }
 
         .focus-icon {
             width: 54px; height: 54px;
@@ -445,7 +448,7 @@
 
         .focus-card p {
             font-family: var(--font-body);
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             font-weight: 400;
             color: var(--text-soft);
             line-height: 1.7;
@@ -563,7 +566,7 @@
             font-family: var(--font-body);
             font-size: 1rem;
             line-height: 1.85;
-            color: var(--text-soft);
+            color: #555;
             margin-bottom: 3rem;
         }
 
@@ -632,8 +635,8 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             display: flex; align-items: center; justify-content: center;
             font-family: var(--font-display);
-            font-style: italic;
-            font-weight: 700;
+            font-style: normal;
+            font-weight: 600;
             font-size: 0.9rem;
             color: var(--text-soft);
         }
@@ -672,7 +675,7 @@
         .seg-cause, .seg-full { transform-origin: left; }
 
         .compare-note {
-            font-size: 0.85rem;
+            font-size: 0.92rem;
             color: var(--text-soft);
             line-height: 1.7;
             margin-top: 0.7rem;
@@ -702,12 +705,6 @@
             padding: 1.9rem 1.9rem 1.75rem;
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .commit-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .commit-num {
@@ -729,10 +726,11 @@
             font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 0.55rem;
+            padding-right: 3.25rem;
         }
 
         .commit-card p {
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             color: var(--text-soft);
             line-height: 1.7;
         }
@@ -766,8 +764,8 @@
 
         .close-body {
             font-size: 0.95rem;
-            font-weight: 300;
-            color: rgba(255,255,255,0.7);
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
             line-height: 1.65;
             margin-bottom: 2.25rem;
         }
@@ -791,7 +789,7 @@
         .footer-line {
             font-family: var(--font-body);
             font-size: 0.72rem;
-            color: rgba(255,255,255,0.45);
+            color: rgba(255,255,255,0.7);
             letter-spacing: 0.03em;
             line-height: 1.7;
         }
@@ -805,7 +803,7 @@
         }
 
         .footer-line a {
-            color: rgba(255,255,255,0.55);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
         }
 
@@ -814,7 +812,7 @@
         .footer-fine {
             margin-top: 0.6rem;
             font-size: 0.64rem;
-            color: rgba(255,255,255,0.28);
+            color: rgba(255,255,255,0.55);
             line-height: 1.7;
             max-width: 560px;
             margin-left: auto;
@@ -846,8 +844,11 @@
 
         @media (max-width: 560px) {
             .top { padding: 1.1rem 1.25rem; }
-            .top-mail { display: none; }
-            .bar-seg { font-size: 0.56rem; padding: 0 0.7rem; }
+            .top-mail { padding: 0.35rem 0.8rem; font-size: 0.68rem; }
+            .top-brand span { display: none; }
+            .bar-seg { font-size: 0.62rem; padding: 0 0.7rem; }
+            .where-badges { gap: 0.4rem; }
+            .badge { padding: 0.42rem 0.75rem; font-size: 0.76rem; gap: 0.35rem; }
             .seg-100 { font-size: 1.15rem; }
             .bar-q { width: 24px; height: 24px; font-size: 0.8rem; }
             .why, .model { padding-top: 4.5rem; }
@@ -855,6 +856,55 @@
             .pin-ring { r: 11; }
             .map-arc { stroke-width: 2.4; }
             .ksmap { margin-top: 2.25rem; }
+        }
+
+        /* ===== v3: quieter focus columns, close contact ===== */
+        .top { justify-content: flex-end; }
+        .top-brand { display: none; }
+        .focus-grid { gap: 0; margin-top: 0.5rem; }
+        .focus-card {
+            background: none; border: 0; border-radius: 0;
+            padding: 0.5rem 2.25rem 0.25rem;
+        }
+        .focus-card + .focus-card { border-left: 1px solid var(--line); }
+        .focus-icon, .focus-spacer { display: none; }
+        .focus-card h3 { font-size: 1.3rem; margin-bottom: 0.7rem; }
+        .focus-badge {
+            background: none; padding: 0; margin: 0 0 0.6rem;
+            font-size: 0.62rem; letter-spacing: 0.18em;
+        }
+        .focus-card:not(:first-child)::before {
+            content: ''; display: block; height: calc(0.62rem * 1.2 + 0.6rem);
+        }
+        .close-mail {
+            display: inline-block; margin-top: 2.25rem;
+            font-size: 0.85rem; font-weight: 500; color: var(--white);
+            text-decoration: none; border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 100px; padding: 0.7rem 1.5rem;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+        .close-mail:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+        @media (max-width: 768px) {
+            .focus-card { padding: 1.6rem 0.5rem; }
+            .focus-card + .focus-card { border-left: 0; border-top: 1px solid var(--line); }
+            .focus-card:not(:first-child)::before { display: none; }
+        }
+
+        /* QC fixes */
+        .commit-card p { text-wrap: wrap; }
+        .focus-badge { display: block; width: fit-content; margin-left: auto; margin-right: auto; line-height: 1.2; }
+        .footer-fine { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
+        @media (max-width: 560px) {
+            .footer-line .sep { display: none; }
+            .footer-line a { display: block; }
+        }
+        @media (max-width: 400px) {
+            .where-badges { display: grid; grid-template-columns: auto auto; justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .focus-grid { margin-top: 1.5rem; }
+            .focus-card p { max-width: 30ch; margin: 0 auto; }
         }
     </style>
 </head>
@@ -956,7 +1006,6 @@
                 </div>
 
                 <div class="focus-card reveal">
-                    <div class="focus-spacer"></div>
                     <div class="focus-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
@@ -967,7 +1016,6 @@
                 </div>
 
                 <div class="focus-card reveal">
-                    <div class="focus-spacer"></div>
                     <div class="focus-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/>
@@ -991,12 +1039,12 @@
     <!-- OUR COMMITMENTS -->
     <section class="commit">
         <div class="commit-inner">
-            <p class="section-label label-center reveal" style="justify-content:center;">Our Commitments</p>
+            <p class="section-label label-center reveal">Our Commitments</p>
             <div class="commit-grid">
                 <div class="commit-card reveal">
                     <span class="commit-num">01</span>
                     <h3>Every dollar, with purpose</h3>
-                    <p>Our goal is that 100% of public donations reach the work. The private foundation carries the expenses, so your gift is free to do what you sent it to do.</p>
+                    <p>Our goal is that 100% of public donations reach the work. The private foundation carries the expenses, so your gift is free to do what you sent&nbsp;it&nbsp;to&nbsp;do.</p>
                 </div>
                 <div class="commit-card reveal">
                     <span class="commit-num">02</span>
@@ -1011,7 +1059,7 @@
                 <div class="commit-card reveal">
                     <span class="commit-num">04</span>
                     <h3>An annual letter for our donors</h3>
-                    <p>Every year, we make a letter available to everyone who has given: real numbers, in writing, on people helped, dollars deployed, and what comes next. Signed by us, answerable to you.</p>
+                    <p>Every year, we make a letter available to everyone who has given: real numbers, in writing, on people helped, dollars deployed, and what comes next. Signed by our president, answerable to you.</p>
                 </div>
             </div>
         </div>
@@ -1022,6 +1070,7 @@
         <div class="close-inner">
             <p class="close-lead reveal d1">We will let the work <em>speak for itself.</em></p>
             <p class="close-body reveal d2">Men lie, women lie, numbers don&rsquo;t.</p>
+            <a class="close-mail reveal d2" href="mailto:info@kindsteward.org">info@kindsteward.org</a>
         </div>
     </section>
 
@@ -1031,7 +1080,7 @@
             <circle cx="34" cy="34" r="32" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
             <path d="M34 17 C34 17, 23 23, 23 31 C23 38, 28 42, 34 47 C40 42, 45 38, 45 31 C45 23, 34 17, 34 17Z" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none"/>
         </svg>
-        <p class="footer-line"><strong>Kind Steward</strong><br>A 501(c)(3) public charity &middot; EIN 42-2121249 &middot; <a href="mailto:info@kindsteward.org">info@kindsteward.org</a></p>
+        <p class="footer-line"><strong>Kind Steward</strong><br>A 501(c)(3) public charity &middot; EIN 42-2121249<span class="sep"> &middot; </span><a class="nowrap" href="mailto:info@kindsteward.org">info@kindsteward.org</a></p>
         <p class="footer-fine">Contributions are tax-deductible as allowed by law.<br>&copy; 2026 Kind Steward. All rights reserved.</p>
     </footer>
 
